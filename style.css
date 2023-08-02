@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: white;
+    background-color: #1f2833;
+    overflow: hidden;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 50px 20vw;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400;
+    padding: 100px 20vw;
+}
+
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 200%;
+}
+
+.dark {
+    background: #1f2833;
+}
+
+.gray {
+    background: #c5c6c7;
+}
+
+.turquoise {
+    background: #66fcf1;
+}
+
+.dark-turquoise {
+    background: #45a29e;
+}
+
+a {
+    text-decoration: none;
+    color: #45a29e;
+}
+
+#about-me {
+    font-size: 20px;
+    text-align: center;
+}
