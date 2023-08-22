@@ -1,0 +1,86 @@
+:root {
+    --background-color: #1d1f21;
+    --text-color: #e0e0e0;
+    --code-background: #3b3b4b;
+    --code-text: #fff;
+    --accent-color-1: #e57373;
+    --accent-color-2: #a1c4e3;
+    --accent-color-3: #e2a68b;
+    --accent-color-4: #b084ac;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    margin: 10px auto;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--accent-color-1);
+}
+
+h2 {
+    color: var(--accent-color-2);
+    margin-top: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+li {
+    margin: 20px 0;
+}
+
+li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+code {
+    background-color: var(--code-background);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Consolas, monospace;
+    color: var(--code-text);
+    display: block;
+}
+
+code::selection {
+    background-color: var(--accent-color-1);
+    color: var(--background-color);
+}
+
+.copy-button {
+    position: sticky;
+    display: inline-block;
+    left: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a {
+    color: var(--accent-color-3);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

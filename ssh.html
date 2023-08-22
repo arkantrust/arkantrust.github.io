@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ssh\ssh.css" />
+    <title>Generating SSH Keys</title>
+    <script
+      src="ssh\node_modules\clipboard\dist\clipboard.min.js"
+      defer
+    ></script>
+    <script src="ssh\ssh.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Generating SSH Keys</h1>
+
+      <h2>General Steps</h2>
+      <ol>
+        <li>Check for existing keys.</li>
+        <li>Create SSH keys.</li>
+        <li>Run agent.</li>
+        <li>Add SSH key to agent.</li>
+        <li>Copy SSH public key.</li>
+        <li>Test connection.</li>
+      </ol>
+
+      <h2>Linux</h2>
+      <ul>
+        <li>
+          <code id="linux-cmd-1">
+            ls -al ~/.ssh
+            <button class="copy-button" data-clipboard-target="#linux-cmd-1">
+              Copy
+            </button>
+          </code>
+        </li>
+
+        <li>
+          <code id="linux-cmd-2">
+            ssh-keygen -t ed25519 -C "email@example.com"
+            <button class="copy-button" data-clipboard-target="#linux-cmd-2">
+              Copy
+            </button>
+          </code>
+        </li>
+
+        <li>
+          <code id="linux-cmd-3">
+            eval "$(ssh-agent -s)"
+            <button class="copy-button" data-clipboard-target="#linux-cmd-3">
+              Copy
+            </button>
+          </code>
+        </li>
+
+        <li>
+          <code id="linux-cmd-4">
+            ssh-add ~/.ssh/id_ed25519
+            <button class="copy-button" data-clipboard-target="#linux-cmd-4">
+              Copy
+            </button>
+          </code>
+        </li>
+
+        <li>
+          <code id="linux-cmd-5">
+            cat ~/.ssh/id_ed25519.pub
+            <button class="copy-button" data-clipboard-target="#linux-cmd-5">
+              Copy
+            </button>
+          </code>
+        </li>
+
+        <li>
+          <code id="linux-cmd-6">
+            ssh -T git@github.com
+            <button class="copy-button" data-clipboard-target="#linux-cmd-6">
+              Copy
+            </button>
+          </code>
+        </li>
+      </ul>
+
+      <h2>Windows</h2>
+      <ul>
+        <li>
+          <code id="win-cmd-1">
+            cd /.ssh
+            <button class="copy-button" data-clipboard-target="#win-cmd-1">
+              Copy
+            </button>
+          </code>
+        </li>
+
+        <li>
+          <code id="win-cmd-2">
+            ssh-keygen -t ed25519 -C "email@example.com"
+            <button class="copy-button" data-clipboard-target="#win-cmd-2">
+              Copy
+            </button>
+          </code>
+        </li>
+
+        <li>
+          <code id="win-cmd-3">
+            Start-Process ssh-agent -ArgumentList "-s | ssh-add"
+            <button class="copy-button" data-clipboard-target="#win-cmd-3">
+              Copy
+            </button>
+          </code>
+        </li>
+
+        <li>
+          <code id="win-cmd-4">
+            ssh-add ~/.ssh/id_ed25519
+            <button class="copy-button" data-clipboard-target="#win-cmd-4">
+              Copy
+            </button>
+          </code>
+        </li>
+
+        <li>
+          <code id="win-cmd-5">
+            clip &lt; ~/.ssh/id_ed25519.pub
+            <button class="copy-button" data-clipboard-target="#win-cmd-5">
+              Copy
+            </button>
+          </code>
+        </li>
+
+        <li>
+          <code id="win-cmd-6">
+            ssh -T git@github.com
+            <button class="copy-button" data-clipboard-target="#win-cmd-6">
+              Copy
+            </button>
+          </code>
+        </li>
+      </ul>
+
+      <h2>Change Passphrase</h2>
+      <code id="change-phrase">
+        ssh-keygen -p -f ~/.ssh/id_ed25519
+        <button class="copy-button" data-clipboard-target="#change-phrase">
+          Copy
+        </button>
+      </code>
+
+      <h2>Bibliography</h2>
+      <p>
+        Kudos to <a href="https://www.github.com">GitHub</a> for being such an
+        amazing platform and making awesome tutorials like
+        <a
+          href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/"
+          >this one</a
+        >.
+      </p>
+    </div>
+  </body>
+</html>
